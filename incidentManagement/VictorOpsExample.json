@@ -1,0 +1,10 @@
+# Python API is unofficial and outdated. Best option is the REST API if no other integrations are available
+
+# Trigger a critical incident
+curl -X POST -d '{"message_type":"critical"}' https://alert.victorops.com/integrations/generic/20131114/alert/e8b0d969-a07a-4f86-9d25-ed205fe99b50/database
+
+# Ack the incident
+curl -X POST -d '{"message_type":"acknowledgement", "entity_id":"70a1cf24-4840-4196-9185-a2b51a9e26fc"}' https://alert.victorops.com/integrations/generic/20131114/alert/e8b0d969-a07a-4f86-9d25-ed205fe99b50/database
+
+# Resolve the incident
+curl -X POST -d '{"message_type":"recovery", "entity_id":"70a1cf24-4840-4196-9185-a2b51a9e26fc"}' https://alert.victorops.com/integrations/generic/20131114/alert/e8b0d969-a07a-4f86-9d25-ed205fe99b50/database

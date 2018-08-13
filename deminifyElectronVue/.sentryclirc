@@ -1,0 +1,6 @@
+[defaults]
+project=electronvuetest
+org=aidoctest
+
+[auth]
+token=05be4efb264d4e15bf53edad80fb091f322a996c38474899986f9a288cb0e6ae

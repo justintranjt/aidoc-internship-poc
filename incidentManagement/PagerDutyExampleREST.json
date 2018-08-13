@@ -1,0 +1,24 @@
+# REST API
+# Trigger an incident
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/vnd.pagerduty+json;version=2' --header 'From: justin.tran@aidoc.com' --header 'Authorization: Token token=WyRLzYzEqE2JVmYayKQs' -d '{
+  "incident": {
+    "type": "incident",
+    "title": "Overflow",
+    "service": {
+      "id": "PCMH9RC",
+      "type": "service_reference"
+    }
+  }
+}
+' https://api.pagerduty.com/incidents
+
+# Acknowledge an incident
+curl -X PUT --header 'Content-Type: application/json' --header 'Accept: application/vnd.pagerduty+json;version=2' --header 'From: justin.tran@aidoc.com' --header 'Authorization: Token token=WyRLzYzEqE2JVmYayKQs' -d '{"incidents": [{
+    "id": "PUXTR9G",
+    "type": "incident",
+    "status": "acknowledged",
+  }]
+}' https://api.pagerduty.com/incidents
+
+# List resolved incidents
+curl -X GET --header 'Accept: application/vnd.pagerduty+json;version=2' --header 'Authorization: Token token=WyRLzYzEqE2JVmYayKQs' 'https://api.pagerduty.com/incidents?statuses%5B%5D=resolved&time_zone=UTC'
